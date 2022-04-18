@@ -22,5 +22,8 @@ in your route add
 
 `->middleware('countryCheck')`
 
-
+<hr>
+<br>
+<br>
+<br>
 [webazin.net]('https://webazin.net')
