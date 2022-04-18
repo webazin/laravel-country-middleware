@@ -1,6 +1,6 @@
-#Laravel country access control package
+# Laravel country access control package
 
-#install
+# install
 <hr/>
 
 1-`composer require webazin/country-middleware`
@@ -15,7 +15,7 @@
 <br>
 4-`Webazin\CountryMiddleware\CountryMiddlewareServiceProvider`
 
-#use
+# use
 <hr>
 
 in your route add 
