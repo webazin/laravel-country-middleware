@@ -1,6 +1,6 @@
 <?php
 
-namespace Webazin\CountryMiddleware;
+namespace Webazin\CountryMiddleware\Middlewars;
 
 use App\Models\Country\Country;
 use Closure;

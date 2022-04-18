@@ -3,6 +3,7 @@
 namespace Webazin\CountryMiddleware;
 
 use Illuminate\Support\ServiceProvider;
+use Webazin\CountryMiddleware\Middlewars\CountryCheck;
 
 class CountryMiddlewareServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,9 @@ class CountryMiddlewareServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__ . 'Config/CountryMiddleware.php', 'CountryMiddleware'
+        );
     }
 
     /**
@@ -36,5 +39,15 @@ class CountryMiddlewareServiceProvider extends ServiceProvider
         ]);
 
         $this->app['router']->aliasMiddleware('webazin:countryCheck', CountryCheck::class);
+
+        $this->publishes([
+            __DIR__ . 'Config/CountryMiddleware.php' => config_path('CountryMiddleware.php'),
+        ]);
+
+        $this->loadTranslationsFrom(__DIR__ . 'Lang', 'CountryMiddleware');
+        $this->publishes([
+            __DIR__ . 'Lang' => $this->app->langPath('vendor/webazin'),
+        ]);
+
     }
 }
