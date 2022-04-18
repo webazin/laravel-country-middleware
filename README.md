@@ -48,7 +48,7 @@ For example
 
 <br>
 
-`countries_ban' => ['US','UK']`
+`countries_ban' => ['US']`
 
 <br>
 
