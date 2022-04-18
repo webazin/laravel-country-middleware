@@ -1,6 +1,7 @@
 # Laravel country access control package
 
 # install
+
 <hr/>
 
 1-`composer require webazin/country-middleware`
@@ -16,14 +17,25 @@
 4-`Webazin\CountryMiddleware\CountryMiddlewareServiceProvider`
 
 # use
+
 <hr>
 
-in your route add 
+in your route add
 
 `->middleware('countryCheck')`
 
 <hr>
-<br>
+# ban country
+<hr>
 
+`config/CountryMiddleware.php`
+<br>
+add country iso_code
+<br>
+example
+<br>
+`countries_ban' => ['US']`
+<br>
+<hr>
 [webazin.net]('https://webazin.net')
 
