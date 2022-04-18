@@ -1,0 +1,26 @@
+{
+    "name": "webazin/country-middleware",
+    "description": "country ban and country required captcha in route access",
+    "require": {
+        "torann/geoip": "^3.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Webazin",
+            "email": "info@webazin.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Webazin\\CountryMiddleware\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers" : [
+                "Webazin\\CountryMiddleware\\CountryMiddlewareServiceProvider"
+            ]
+        }
+    }
+}
