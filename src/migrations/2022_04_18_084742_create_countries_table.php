@@ -13,13 +13,20 @@ class CreateCountriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('countries', function (Blueprint $table) {
-            $table->bigIncrements( 'id' );
-            $table->string( 'country_code' );
-            $table->string( 'country_name' );
-            $table->enum( 'status' , [ 'active' , 'ban_ip' , 'captcha_ip' ] )->default( 'active' );
+        Schema::create(config('CountryMiddleware.database_prefix') . 'countries', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('country_code');
+            $table->string('country_name');
+            $table->enum('status', ['active', 'ban_ip', 'captcha_ip'])->default('active');
             $table->timestamps();
         });
+        foreach (config('CountryMiddleware.countries') as $country) {
+            \Illuminate\Support\Facades\DB::table(config('CountryMiddleware.database_prefix') . 'countries')
+                ->insert([
+                    'country_code' => $country['country_code'],
+                    'country_name' => $country['country_name'],
+                ]);
+        }
     }
 
     /**
@@ -29,6 +36,6 @@ class CreateCountriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists(config('CountryMiddleware.database_prefix') . 'countries');
     }
 }
