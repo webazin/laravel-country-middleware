@@ -8,22 +8,24 @@
 insert in laravel < 5
 <br>
 `config/app.php`
+<br>
 `\Webazin\CountryMiddleware\CountryMiddlewareServiceProvider::class`
 <br>
 and 
 <br>
 `php artisan vendor:publish`
 <br>
-select `Webazin\CountryMiddleware\CountryMiddlewareServiceProvider`
+and select <br> `Webazin\CountryMiddleware\CountryMiddlewareServiceProvider`
 
 #use
-<hr/>
+<hr>
+
 in your route add 
 
 `->middleware('countryCheck')`
 
 <hr>
 <br>
-<br>
-<br>
+
 [webazin.net]('https://webazin.net')
+
