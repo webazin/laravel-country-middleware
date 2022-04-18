@@ -31,9 +31,10 @@ class CountryMiddlewareServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/Routes/routes.php');
 
         $this->loadViewsFrom(__DIR__ . '/Views', 'CountryMiddleware');
-
         $this->publishes([
             __DIR__ . '/Views' => base_path('resource/views/Webazin/CountryMiddleware')
         ]);
+
+        $this->app['router']->aliasMiddleware('webazin:countryCheck', CountryCheck::class);
     }
 }
