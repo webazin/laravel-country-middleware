@@ -3,19 +3,17 @@
 #install
 <hr/>
 
-`composer require webazin/country-middleware`
+1-`composer require webazin/country-middleware`
 
-insert in laravel < 5
+2-insert in laravel < 5
 <br>
 `config/app.php`
 <br>
 `\Webazin\CountryMiddleware\CountryMiddlewareServiceProvider::class`
 <br>
-and 
+3-`php artisan vendor:publish`
 <br>
-`php artisan vendor:publish`
-<br>
-and select <br> `Webazin\CountryMiddleware\CountryMiddlewareServiceProvider`
+4-`Webazin\CountryMiddleware\CountryMiddlewareServiceProvider`
 
 #use
 <hr>
