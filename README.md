@@ -1,4 +1,4 @@
-# Laravel country access control package
+# Laravel package for countries access control
 
 # Install
 
